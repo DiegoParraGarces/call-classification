@@ -1,5 +1,5 @@
 import unittest
-from src.main import HuggingFaceModel #main
+from src.main import HuggingFaceModel, predict_with_model
 
 class TestHuggingFaceModel(unittest.TestCase):
     def setUp(self):
