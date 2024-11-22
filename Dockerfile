@@ -26,7 +26,7 @@ FROM python:3.9-slim
 WORKDIR /app
 
 # Copiar el archivo principal y otros necesarios al contenedor
-COPY main.py ./main.py
+COPY src/main.py ./main.py
 COPY requirements.txt ./requirements.txt
 
 # Instalar las dependencias
