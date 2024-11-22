@@ -22,9 +22,14 @@ class HuggingFaceModel:
         inputs = self.tokenizer(text, return_tensors="pt")
         outputs = self.model(**inputs)
         probabilities = torch.nn.functional.softmax(outputs.logits, dim=-1)
+        probabilities_list = probabilities.tolist()
+
         predicted_index = torch.argmax(probabilities, dim=1).item()
         predicted_label = self.label_mapping[predicted_index]
+
         return predicted_label
+    
+    
 
     def validate_input(self, text):
         """Valida que el texto sea coherente y legible."""
