@@ -10,7 +10,7 @@ class TestHuggingFaceModel(unittest.TestCase):
 
     def test_predict_valid_text(self):
         """Prueba que el modelo predice correctamente etiquetas válidas."""
-        text = "un árbol cortó las cuerdas"
+        text = "un arbol corto las cuerdas"
         prediction = self.model.predict(text)
         self.assertIsInstance(prediction, str)  # La salida debe ser un string
         self.assertIn(prediction, ["ejecutar", "cancelar"])  # Validar etiquetas
